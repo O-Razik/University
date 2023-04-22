@@ -1,0 +1,259 @@
+#include "CList.h"
+#include "Func.h"
+
+//-------------------------------------------------------------------------------
+
+// Creat/open a new list of students from a text file
+CList* AddElemListFile() {
+	FILE* pFile = fopen("marks.txt", "r");
+	CList* pTemp = NULL;
+	pTemp = (CList*)malloc(sizeof(CList));
+	CList* pHead = NULL;
+	CList* pNextStud = pTemp;
+
+	char* pw;
+	char string[MAXLENG];
+	int index = 0;
+	while (!feof(pFile))
+	{
+		pTemp = pNextStud;
+		fgets(string, MAXLENG, pFile);
+		pw = strtok(string, ".\t\n");
+		strcpy(pTemp->m_value.m_szSurname, pw);
+		pw = strtok(NULL, ".\t\n");
+		strcpy(pTemp->m_value.m_czName, pw);
+		pw = strtok(NULL, ".\t\n");
+		pTemp->m_value.m_iBday = atoi(pw);
+		pw = strtok(NULL, ".\t\n");
+		pTemp->m_value.m_iBmonth = atoi(pw);
+		pw = strtok(NULL, ".\t\n");
+		pTemp->m_value.m_iByear = atoi(pw);
+
+		for (int idex_mark = 0; idex_mark < NUM_MARK; idex_mark++) {
+			pw = strtok(NULL, "\t\n");
+			pTemp->m_value.m_iaMark[idex_mark] = atoi(pw);
+		}
+		if (!pHead) {
+			pHead = pTemp;
+			strcpy(pHead->m_value.m_szSurname, pTemp->m_value.m_szSurname);
+			strcpy(pHead->m_value.m_czName, pTemp->m_value.m_czName);
+			pHead->m_value.m_iBday = pTemp->m_value.m_iBday;
+			pHead->m_value.m_iBmonth = pTemp->m_value.m_iBmonth;
+			pHead->m_value.m_iByear = pTemp->m_value.m_iByear;
+			for (int idex_mark = 0; idex_mark < NUM_MARK; idex_mark++) {
+				pHead->m_value.m_iaMark[idex_mark] = pTemp->m_value.m_iaMark[idex_mark];
+			}
+			pNextStud = (struct CNode*)malloc(sizeof(struct CNode));
+			pHead->m_pnext = pNextStud;
+
+		}
+		if (pHead) {
+			pNextStud = (struct CNode*)malloc(sizeof(struct CNode));
+		}
+		pTemp->m_pnext = pNextStud;
+	}
+	pTemp->m_pnext = NULL;
+	pNextStud = NULL;
+	pTemp = pHead;
+	return pHead;
+}
+//-------------------------------------------------------------------------------
+
+// Function to check if a string contains only letters
+int is_valid_name(char* name) {
+	for (int i = 0; name[i] != '\0'; i++) {
+		if (!isalpha(name[i])) {
+			return 0;
+		}
+	}
+	return 1;
+}
+
+
+//-------------------------------------------------------------------------------
+
+// Function to check if a date is valid
+int is_valid_date(int day, int month, int year) {
+	int is_valid = 1;
+	int max_day;
+
+	// Check year
+	if (year < 1900 || year > 2020) {
+		is_valid = 0;
+		printf("Invalid year entered. Please enter a year between 1900 and 2020.\n");
+	}
+
+	// Check month
+	if (month < 1 || month > 12) {
+		is_valid = 0;
+		printf("Invalid month entered. Please enter a month between 1 and 12.\n");
+	}
+
+	// Check day
+	if (is_valid) {
+		if (month == 2) {
+			if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+				max_day = 29;
+			}
+			else {
+				max_day = 28;
+			}
+		}
+		else if (month == 4 || month == 6 || month == 9 || month == 11) {
+			max_day = 30;
+		}
+		else {
+			max_day = 31;
+		}
+
+		if (day < 1 || day > max_day) {
+			is_valid = 0;
+			printf("Invalid day entered. Please enter a day between 1 and %d.\n", max_day);
+		}
+	}
+
+	return is_valid;
+}
+
+//-------------------------------------------------------------------------------
+
+// Creat a new list of students from the console
+CList* AddElemListConsole() {
+	CList* pHead = NULL;
+	CList* pnext = NULL;
+	CList* pTemp = NULL;
+	int iAmount;
+	printf("Amount of students: ");
+	scanf("%d", &iAmount);
+	for (int i = 0; i < iAmount; i++)
+	{
+		pTemp = (CList*)malloc(sizeof(CList));
+		if (!pTemp) {
+			fprintf(stderr, "Memory allocation failed.\n");
+			exit(EXIT_FAILURE);
+		}
+
+		int valid_input = 0;
+		printf("Enter student information:\n");
+		while (!valid_input) {
+			printf("_(Surname) _(Name):\n");
+
+			// Read input and check validity of name
+			if (scanf("%s %s", pTemp->m_value.m_szSurname, pTemp->m_value.m_czName) != 2
+				|| !is_valid_name(pTemp->m_value.m_szSurname) || !is_valid_name(pTemp->m_value.m_czName)) {
+				printf("Invalid input for name. Name should only contain letters.\n");
+				while (getchar() != '\n') {} // Clear input buffer
+				continue;
+			}
+			valid_input = 1;
+		}
+		valid_input = 0;
+		while (!valid_input) {
+			printf("\n_._._ (Birthday_date, DD.MM.YYYY):\n");
+			// Read input and check validity of date of birth
+			if (scanf("%d.%d.%d", &pTemp->m_value.m_iBday, &pTemp->m_value.m_iBmonth, &pTemp->m_value.m_iByear) != 3
+				|| !is_valid_date(pTemp->m_value.m_iBday, pTemp->m_value.m_iBmonth, pTemp->m_value.m_iByear)) {
+				printf("Invalid input for date of birth. Date should be in the format dd.mm.yyyy and should be a valid date between 1900 and 2020.\n");
+				while (getchar() != '\n') {} // Clear input buffer
+				continue;
+			}
+			valid_input = 1;
+		}
+		valid_input = 0;
+		while (!valid_input) {
+			printf("\nMarks (four marks from 1 to 5)):\n");
+			// Read input and check validity of marks
+			int mark;
+			for (int idex_mark = 0; idex_mark < NUM_MARK; idex_mark++) {
+				if (scanf("%d", &mark) != 1 || mark < 1 || mark > 5) {
+					printf("Invalid input for mark %d. Marks should be integers between 1 and 5.\n", idex_mark + 1);
+					while (getchar() != '\n') {} // Clear input buffer
+					break;
+				}
+				pTemp->m_value.m_iaMark[idex_mark] = mark;
+				valid_input = 1;
+			}
+		}
+		pTemp->m_pnext = NULL;
+
+		if (!pHead) {
+			pHead = pTemp;
+			pnext = pTemp;
+		}
+		else {
+			pnext->m_pnext = pTemp;
+			pnext = pTemp;
+		}
+	}
+	return pHead;
+}
+
+//-------------------------------------------------------------------------------
+
+// Add student from the console
+CList* AddElem(CList** pHead) {
+	CList* pTemp = NULL;
+	pTemp = (CList*)malloc(sizeof(CList));
+	if (!pTemp) {
+		fprintf(stderr, "Memory allocation failed.\n");
+		exit(EXIT_FAILURE);
+	}
+
+	int valid_input = 0;
+	printf("Enter student information:\n");
+	while (!valid_input) {
+		printf("_(Surname) _(Name):\n");
+
+		// Read input and check validity of name
+		if (scanf("%s %s", pTemp->m_value.m_szSurname, pTemp->m_value.m_czName) != 2
+			|| !is_valid_name(pTemp->m_value.m_szSurname) || !is_valid_name(pTemp->m_value.m_czName)) {
+			printf("Invalid input for name. Name should only contain letters.\n");
+			while (getchar() != '\n') {} // Clear input buffer
+			continue;
+		}
+		valid_input = 1;
+	}
+	valid_input = 0;
+	while (!valid_input) {
+		printf("\n_._._ (Birthday_date, DD.MM.YYYY):\n");
+		// Read input and check validity of date of birth
+		if (scanf("%d.%d.%d", &pTemp->m_value.m_iBday, &pTemp->m_value.m_iBmonth, &pTemp->m_value.m_iByear) != 3
+			|| !is_valid_date(pTemp->m_value.m_iBday, pTemp->m_value.m_iBmonth, pTemp->m_value.m_iByear)) {
+			printf("Invalid input for date of birth. Date should be in the format dd.mm.yyyy and should be a valid date between 1900 and 2020.\n");
+			while (getchar() != '\n') {} // Clear input buffer
+			continue;
+		}
+		valid_input = 1;
+	}
+	valid_input = 0;
+	while (!valid_input) {
+		printf("\nMarks (four marks from 1 to 5)):\n");
+		// Read input and check validity of marks
+		int mark;
+		for (int idex_mark = 0; idex_mark < NUM_MARK; idex_mark++) {
+			if (scanf("%d", &mark) != 1 || mark < 1 || mark > 5) {
+				printf("Invalid input for mark %d. Marks should be integers between 1 and 5.\n", idex_mark + 1);
+				while (getchar() != '\n') {} // Clear input buffer
+				break;
+			}
+			pTemp->m_value.m_iaMark[idex_mark] = mark;
+			valid_input = 1;
+		}
+	}
+	pTemp->m_pnext = NULL;
+
+	if (*pHead == NULL) {
+		*pHead = pTemp;
+	}
+	else {
+		CList* pNow = *pHead;
+		while (pNow->m_pnext != NULL) {
+			pNow = pNow->m_pnext;
+		}
+		pNow->m_pnext = pTemp;
+		pNow->m_pnext->m_pnext = NULL;
+	}
+	return *pHead;
+}
+
+//-------------------------------------------------------------------------------

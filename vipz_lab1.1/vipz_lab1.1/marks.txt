@@ -1,0 +1,9 @@
+Filipiuk	Oleksandr	25.05.2005	3	4	5	5
+Banyak		Petro		30.01.2006	4	5	3	4
+Razik		Oleksandr	10.09.2005	4	5	5	5
+Buster		Myhailo		05.02.2005	4	4	4	2
+Kvitka		Alla		04.11.2005	5	3	5	4
+Richka		Max		30.01.2005	4	4	4	4
+Unix		Anton		09.09.2006	3	2	4	3
+Hrinka		Ostap		01.01.2005	4	5	4	5
+Tree		Artem		19.12.2005	3	2	5	4
