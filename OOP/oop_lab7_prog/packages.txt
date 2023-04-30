@@ -1,0 +1,3 @@
+I used GoogleTest and GMock for tests. The corresponding libraries were stored in the "packages" folder, where these folders were located:
+google-testmock.1.13.0
+googletestmock.v.141.1.0.3
