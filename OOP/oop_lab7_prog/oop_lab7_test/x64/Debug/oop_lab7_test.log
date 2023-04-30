@@ -1,0 +1,24 @@
+﻿  main_test.cpp
+C:\Users\razik\source\repos\oop_lab7_prog\oop_lab7_test\class_test.h(48,1): warning C4250: 'MockCCommonParcel': inherits 'CCommonParcel::CCommonParcel::SetPrice' via dominance
+C:\Users\razik\source\repos\oop_lab7_prog\oop_lab6_prog\CCommonParcel.cpp(73): message : see declaration of 'CCommonParcel::SetPrice'
+C:\Users\razik\source\repos\oop_lab7_prog\oop_lab7_test\main_test.cpp(35,2): warning C4244: 'argument': conversion from 'double' to 'RawType', possible loss of data
+          with
+          [
+              RawType=float
+          ]
+C:\Users\razik\source\repos\oop_lab7_prog\oop_lab7_test\main_test.cpp(39,2): warning C4244: 'argument': conversion from 'double' to 'RawType', possible loss of data
+          with
+          [
+              RawType=float
+          ]
+C:\Users\razik\source\repos\oop_lab7_prog\oop_lab7_test\main_test.cpp(43,2): warning C4305: 'argument': truncation from 'double' to 'RawType'
+          with
+          [
+              RawType=float
+          ]
+C:\Users\razik\source\repos\oop_lab7_prog\oop_lab7_test\main_test.cpp(43,2): warning C4244: 'argument': conversion from 'double' to 'RawType', possible loss of data
+          with
+          [
+              RawType=float
+          ]
+  oop_lab7_test.vcxproj -> C:\Users\razik\source\repos\oop_lab7_prog\x64\Debug\oop_lab7_test.exe

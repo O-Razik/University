@@ -1,0 +1,15 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6f953d35_002Da09b_002D4777_002Db82b_002De6a45a37c956/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FirstMockTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;GTest::4E2AA8E7-652A-43FA-B5E1-7378866C9DF8::Windows,Version=v10.0.19041::MockCCommonParcel.FirstMockTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=73916991_002Dc929_002D4864_002Dbd1a_002D8a51a763cf53/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FirstMockTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;GTest::4E2AA8E7-652A-43FA-B5E1-7378866C9DF8::Windows,Version=v10.0.19041::MockCCommonParcel.FirstMockTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::4E2AA8E7-652A-43FA-B5E1-7378866C9DF8::Windows,Version=v10.0.19041::MockCCommonParcel.SecondMockTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=84146c77_002Dca25_002D48e1_002Da994_002Dcb78c1ca9487/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

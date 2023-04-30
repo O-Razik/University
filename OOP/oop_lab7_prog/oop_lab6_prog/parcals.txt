@@ -1,0 +1,165 @@
+
+---------------------------------------------------
+ class: CCommonParcel 
+ adress: Ukraine
+ priority: nonpriority
+ tariff: LightWeight(0-250g)
+ price: 45 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ adress: region
+ priority: priority
+ tariff: HeavyWeight(1000-2000g)
+ price: 80.7 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CDigitalTransfer 
+ adress: abroad
+ priority: priority
+ tariff: e-transfer
+ value: 400 USD
+ price: 560 USD
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CDeclaredValueParcel 
+ adress: abroad
+ priority: priority
+ tariff: LightWeight(0-250g)
+ value: 150 USD
+ price: 26.4 USD
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: priority
+ tariff: LightWeight(0-250g)
+ price: 000002F1A54B1490 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: priority
+ tariff: LightWeight(0-250g)
+ price: 0000021FE89112B0 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: nonpriority
+ tariff: LightWeight(0-250g)
+ price: 0000021D128A02E0 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: nonpriority
+ tariff: HeavyWeight(1000-2000g)
+ price: 0000016692EA10E0 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: Ukraine
+ priority: priority
+ tariff: HeavyWeight(1000-2000g)
+ price: 000001C1E5430F40 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CDigitalTransfer 
+ address: abroad
+ priority: nonpriority
+ tariff: e-transfer
+ value: 1000 USD
+ price: 000001C1E5431300 USD
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: nonpriority
+ tariff: LightWeight(0-250g)
+ price: 000001633E5813A0 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: Ukraine
+ priority: priority
+ tariff: LightWeight(0-250g)
+ price: 00000271E28C1170 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CDeclaredValueParcel 
+ address: region
+ priority: nonpriority
+ tariff: HeavyWeight(1000-2000g)
+ value: 1000 UAH
+ price: 00000271E28C0B30 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: priority
+ tariff: LightWeight(0-250g)
+ price: 0000022ECEC608B0 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CCommonParcel 
+ address: region
+ priority: priority
+ tariff: HeavyWeight(1000-2000g)
+ price: 00000292F7C00BC0 UAH
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+ class: CDigitalTransfer 
+ address: Ukraine
+ priority: nonpriority
+ tariff: e-transfer
+ value: 150 UAH
+ price: 00000292F7C00D00 UAH
+
+---------------------------------------------------
+
