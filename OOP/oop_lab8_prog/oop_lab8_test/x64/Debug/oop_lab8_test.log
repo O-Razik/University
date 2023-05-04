@@ -1,0 +1,8 @@
+﻿  test_main.cpp
+C:\Users\razik\source\repos\oop_lab8_prog\oop_lab8_test\test_main.cpp(46,2): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\razik\source\repos\oop_lab8_prog\oop_lab8_test\test_main.cpp(75,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\razik\source\repos\oop_lab8_prog\oop_lab8_test\test_main.cpp(76,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\razik\source\repos\oop_lab8_prog\oop_lab8_test\test_main.cpp(111,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\razik\source\repos\oop_lab8_prog\oop_lab8_test\test_main.cpp(112,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\razik\source\repos\oop_lab8_prog\oop_lab8_test\test_main.cpp(113,18): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  oop_lab8_test.vcxproj -> C:\Users\razik\source\repos\oop_lab8_prog\x64\Debug\oop_lab8_test.exe

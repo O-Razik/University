@@ -1,0 +1,5 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (oop_lab5_prog.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  class.cpp
+  queue_err_sizeZero.cpp
+  Generating Code...
+  oop_lab5_prog.vcxproj -> C:\Users\razik\source\repos\oop_lab8_prog\x64\Debug\oop_lab8_prog.lib

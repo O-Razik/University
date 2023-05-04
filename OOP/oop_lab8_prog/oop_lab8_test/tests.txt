@@ -1,0 +1,126 @@
+TEST(CQueue, EmptyTest) {
+	CQueue* queue = new (CQueue);
+	EXPECT_TRUE((*queue).QueueIsEmpty());
+	EXPECT_EQ((* queue).QueueSize(), 0);
+
+	*queue + 1.0;
+	EXPECT_FALSE((*queue).QueueIsEmpty());
+	EXPECT_EQ((*queue).QueueSize(), 1);
+}
+
+TEST(CQueue, AddRemoveSizeTest) {
+	EXPECT_DEATH(CQueue::CQueue(NAN), "!chek");
+	CQueue* queue = new CQueue(5.0);
+	
+	
+	EXPECT_EQ((*queue).QueueSize(), 1);
+	*queue + 10.0;
+	*queue + 15.0;
+	EXPECT_EQ((*queue).QueueSize(), 3);
+	EXPECT_EQ((*queue).QueueAver(), 10.0);
+	*queue - 2;
+
+	EXPECT_EQ(queue->QueueSize(), 1);
+	EXPECT_EQ(queue->QueueMin(), 15.0);
+	EXPECT_EQ(queue->QueueAver(), 15.0);
+
+	*queue - 2;
+	EXPECT_EQ(queue->QueueSize(), 0);
+	EXPECT_DEATH(queue->QueueAver(), "chek");
+}
+
+TEST(CQueue, ScalarMultiplication) {
+	CQueue* queue = new (CQueue);
+
+	*queue + 5.0;
+	*queue + 10.0;
+	*queue + 15.0;
+
+	*queue * 2.0;
+	EXPECT_EQ(queue->QueueMax(), 30.0);
+	EXPECT_EQ(queue->QueueMin(), 10.0);
+
+	*queue - 1;
+	EXPECT_EQ((*queue).QueueMax(), 30.0);
+	EXPECT_EQ((*queue).QueueMin(), 20.0);
+
+	*queue - 1;
+	EXPECT_EQ((*queue).QueueMax(), 30.0);
+	EXPECT_EQ((*queue).QueueMin(), 30.0);
+
+	*queue - 1;
+	EXPECT_DEATH((*queue).QueueMax(),"chek");
+	EXPECT_DEATH((*queue).QueueMin(), "chek");
+}
+
+TEST(CQueue, CopyConstructor) {
+	CQueue* queue1 = new CQueue(7.0);
+	*queue1 + 11.0;
+	*queue1 + 3.0;
+
+	CQueue* queue2 = new CQueue(*queue1);
+	EXPECT_EQ(queue2->QueueSize(), (*queue1).QueueSize());
+	EXPECT_EQ(queue2->QueueAver(), (*queue1).QueueAver());
+
+	EXPECT_EQ(queue2->QueueMax(), (*queue1).QueueMax());
+	EXPECT_EQ(queue2->QueueMin(), (*queue1).QueueMin());
+}
+
+TEST(CQueue, CopyAssignment) {
+	CQueue* queue1 = new CQueue(7.0);
+	*queue1 + 11.0;
+	*queue1 + 3.0;
+
+	CQueue* queue2 = new CQueue;
+	*queue2 = *queue1;
+	EXPECT_EQ((*queue2).QueueSize(), queue1->QueueSize());
+	EXPECT_EQ((*queue2).QueueAver(), queue1->QueueAver());
+
+	EXPECT_EQ((*queue2).QueueMax(), queue1->QueueMax());
+	EXPECT_EQ((*queue2).QueueMin(), queue1->QueueMin());
+}
+
+TEST(CQueueTest, MoveConstructor) {
+	CQueue* queue1 = new CQueue(7.0);
+	*queue1 + 11.0;
+	*queue1 + 3.0;
+	CQueue* queue2 = new CQueue(move(*queue1));
+
+	EXPECT_EQ(queue1->QueueSize(), 0.0);
+	EXPECT_EQ(queue2->QueueSize(), 3.0);
+	EXPECT_DOUBLE_EQ(queue2->getFirst(), 7.0);
+	EXPECT_DOUBLE_EQ(queue2->getLast(), 3.0);
+}
+
+TEST(CQueueTest, MoveAssignment) {
+	CQueue* queue1 = new CQueue(7.0);
+	*queue1 + 11.0;
+	*queue1 + 3.0;
+	CQueue* queue2 = new CQueue;
+	*queue2 = move(*queue1);
+
+	EXPECT_EQ(queue1->QueueSize(), 0.0);
+	EXPECT_EQ(queue2->QueueSize(), 3.0);
+	EXPECT_DOUBLE_EQ(queue2->getFirst(), 7.0);
+	EXPECT_DOUBLE_EQ(queue2->getLast(), 3.0);
+
+}
+
+TEST(CQueue, InputWorkstTest) {
+	CQueue* queue = new CQueue;
+	istringstream input("1.0 2.0 3.0");
+	input >> *queue;
+	EXPECT_EQ(queue->QueueSize(), 3);
+	EXPECT_DOUBLE_EQ(queue->getFirst(), 1.0);
+	EXPECT_DOUBLE_EQ(queue->getLast(), 3.0);
+}
+
+TEST(CQueue, OutputWorksTest) {
+	CQueue* queue = new CQueue;
+	*queue + 1.0;
+	*queue + 2.0;
+	*queue + 3.0;
+	ostringstream output;
+	output << *queue;
+	EXPECT_EQ(output.str(), "1 2 3 ");
+}
