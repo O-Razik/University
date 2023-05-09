@@ -11,10 +11,8 @@
 class CCommonParcel : virtual public CParcel {
 
 private:
-	int a;
 
 protected:
-	int b;
 
 public:
 
