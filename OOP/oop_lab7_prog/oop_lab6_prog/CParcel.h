@@ -9,7 +9,7 @@
 class CParcel {
 
 private:
-	int a;
+	
 protected:
 	std::unique_ptr<Address> DeliveryAddress;
 	std::unique_ptr<double> distance;
