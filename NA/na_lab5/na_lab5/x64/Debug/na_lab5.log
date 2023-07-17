@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\razik\source\repos\na_lab5\na_lab5\main.cpp(25,17): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\razik\source\repos\na_lab5\na_lab5\main.cpp(67,7): warning C4101: 'string': unreferenced local variable
+  na_lab5.vcxproj -> C:\Users\razik\source\repos\na_lab5\x64\Debug\na_lab5.exe

@@ -1,0 +1,17 @@
+﻿  main.cpp
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(44,7): warning C4101: 'string': unreferenced local variable
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(78,15): warning C4101: 'detAi': unreferenced local variable
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(78,9): warning C4101: 'detA': unreferenced local variable
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(181,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(183,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(195,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(206,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(177,15): warning C4101: 'error': unreferenced local variable
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(175,33): warning C4101: 'Am': unreferenced local variable
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(255,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(272,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(273,68): warning C4129: ' ': unrecognized character escape sequence
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(273,101): warning C4129: ' ': unrecognized character escape sequence
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(291,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab3.1\na_lab3.1\main.cpp(336,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  na_lab3.1.vcxproj -> C:\Users\razik\source\repos\na_lab3.1\x64\Debug\na_lab3.1.exe
