@@ -1,0 +1,15 @@
+﻿  main.cpp
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(73,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(105,15): warning C4101: 'detXi': unreferenced local variable
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(105,9): warning C4101: 'detX': unreferenced local variable
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(105,25): warning C4101: 'X': unreferenced local variable
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(139,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(173,25): warning C4101: 'X': unreferenced local variable
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(224,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(273,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(275,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(290,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(314,22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(261,15): warning C4101: 'error': unreferenced local variable
+C:\Users\razik\source\repos\na_lab9\na_lab9\main.cpp(259,35): warning C4101: 'Xm': unreferenced local variable
+  na_lab9.vcxproj -> C:\Users\razik\source\repos\na_lab9\x64\Debug\na_lab9.exe
